@@ -55,7 +55,6 @@ class ItemsController < ApplicationController
 
   def set_category
     @parents = Category.where(ancestry: nil)
-    @item = Item.find(params[:id]).order("created_at DESC")
   end
 
   def get_category_children

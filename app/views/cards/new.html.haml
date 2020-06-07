@@ -1,32 +1,31 @@
 = render "items/header"
-.card-new
-  .card-new__content
-    %h2.card-new__content__top クレジットカード登録
-    
-    = form_with url:cards_path, method: :post, html: { name: "inputForm" },class:"card-form" do |f|
-      .card-content
-        = image_tag "/material/card/visa.jpg", class: "card__image"
-        = image_tag "/material/card/master.jpg", class: "card__image"
-        = image_tag "/material/card/jcb.jpg", class: "card__image"
-        = image_tag "/material/card/american.jpg", class: "card__image__american"
-        = image_tag "/material/card/diners.jpg", class: "card__image"
-        = image_tag "/material/card/discover.jpg", class: "card__image"
-      .card-field
-        %label.card-field--title カード番号
-        %br/
-        = f.text_field :card_number, name: "card_number", id:"card_number", type: "text", placeholder: '半角数字のみ', class: 'card-number', maxlength: "16"
-        %p.card-number--attention ※ハイフン(-)を除いた半角数字で入力してください
-      .card-field
-        %label.card-field--title 有効期限
-        %br/
-        = f.select :exp_year, [["20",2020],["21",2021],["22",2022],["23",2023],["24",2024],["25",2025],["26",2026],["27",2027],["28",2028],["29",2029]], {}, class: 'input-cardyear', name: "exp_year", id:"exp_year"
-        %span 年
-        = f.select :exp_month, [["01",1],["02",2],["03",3],["04",4],["05",5],["06",6],["07",7],["08",8],["09",9],["10",10],["11",11],["12",12]],{}, class: 'input-cardmonth', name: "exp_month", id:"exp_month"
-        %span 月
-      .card-field
-        %label.card-field--title セキュリティーコード
-        %br/
-        = f.text_field :cvc, name: "cvc", id:"cvc", class:"cvc", type: "text", placeholder: 'カード背面4桁もしくは3桁の番号', class: 'input-cardcvc', maxlength: "16"
-      = f.submit 'カードを登録する', class: 'card-submit',id: "charge-form"
-= render "items/footer"
-= render "items/sell_btn"
+  .card-new
+    .card-new__content
+      %h2.card-new__content__top クレジットカード登録
+      
+      = form_with url:cards_path, method: :post, html: { name: "inputForm" },class:"card-form" do |f|
+        .card-content
+          = image_tag "/material/card/visa.jpg", class: "card__image"
+          = image_tag "/material/card/master.jpg", class: "card__image"
+          = image_tag "/material/card/jcb.jpg", class: "card__image"
+          = image_tag "/material/card/american.jpg", class: "card__image__american"
+          = image_tag "/material/card/diners.jpg", class: "card__image"
+          = image_tag "/material/card/discover.jpg", class: "card__image"
+        .card-field
+          %label.card-field--title カード番号
+          %br/
+          = f.text_field :card_number, name: "card_number", id:"card_number", type: "text", placeholder: '半角数字のみ', class: 'card-number', maxlength: "16"
+          %p.card-number--attention ※ハイフン(-)を除いた半角数字で入力してください
+        .card-field
+          %label.card-field--title 有効期限
+          %br/
+          = f.select :exp_year, [["20",2020],["21",2021],["22",2022],["23",2023],["24",2024],["25",2025],["26",2026],["27",2027],["28",2028],["29",2029]], {}, class: 'input-cardyear', name: "exp_year", id:"exp_year"
+          %span 年
+          = f.select :exp_month, [["01",1],["02",2],["03",3],["04",4],["05",5],["06",6],["07",7],["08",8],["09",9],["10",10],["11",11],["12",12]],{}, class: 'input-cardmonth', name: "exp_month", id:"exp_month"
+          %span 月
+        .card-field
+          %label.card-field--title セキュリティーコード
+          %br/
+          = f.text_field :cvc, name: "cvc", id:"cvc", class:"cvc", type: "text", placeholder: 'カード背面4桁もしくは3桁の番号', class: 'input-cardcvc', maxlength: "16"
+        = f.submit 'カードを登録する', class: 'card-submit',id: "charge-form"
+  = render "items/footer"
