@@ -167,7 +167,14 @@
       background-color: red;
       height: 40px;
     }
-    
+    &__sold{
+      display: block;
+  
+      margin: 0 auto;
+      width: 90%;
+      background-color: gray;
+      height: 40px;
+    }
   }
   
   .box-link{
